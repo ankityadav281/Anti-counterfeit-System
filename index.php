@@ -201,10 +201,10 @@
                 <div class="col-md-6 text-md-end">
                     <p>&copy; 2025 Anti-Counterfeit System. All rights reserved.</p>
                     <p>
-                        <a href="https://www.linkedin.com/in/ojasvi-mishra2004/" target="_blank" class="text-light me-3">
+                        <a href="https://www.linkedin.com/in/ankityadav005/" target="_blank" class="text-light me-3">
                             <i class="fab fa-linkedin"></i> LinkedIn
                         </a>
-                        <a href="https://github.com/Ojasvimishra" target="_blank" class="text-light">
+                        <a href="https://github.com/ankityadav281" target="_blank" class="text-light">
                             <i class="fab fa-github"></i> GitHub
                         </a>
                     </p>

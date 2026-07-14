@@ -1,0 +1,255 @@
+:root {
+    --brand: #1457d9;
+    --brand-dark: #0b2f6b;
+    --ink: #172033;
+    --muted: #667085;
+    --line: #d9e2ef;
+    --surface: #ffffff;
+    --soft: #f5f7fb;
+    --success: #12805c;
+    --danger: #c2413f;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--soft);
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.app-navbar {
+    background: linear-gradient(90deg, var(--brand-dark), var(--brand));
+    box-shadow: 0 8px 24px rgba(20, 87, 217, 0.18);
+}
+
+.app-navbar .nav-link {
+    color: rgba(255, 255, 255, 0.78);
+    font-weight: 500;
+}
+
+.app-navbar .nav-link.active,
+.app-navbar .nav-link:hover {
+    color: #fff;
+}
+
+.hero {
+    background: linear-gradient(135deg, rgba(11, 47, 107, 0.92), rgba(20, 87, 217, 0.84)), url('../images/istock.jpg') center/cover;
+    color: #fff;
+    min-height: calc(100vh - 136px);
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.hero-panel {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 8px;
+    padding: 24px;
+    backdrop-filter: blur(8px);
+}
+
+.page-section {
+    padding: 48px 0;
+}
+
+.auth-shell {
+    min-height: calc(100vh - 230px);
+    display: flex;
+    align-items: center;
+}
+
+.app-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 14px 32px rgba(23, 32, 51, 0.08);
+}
+
+.app-card-header {
+    border-bottom: 1px solid var(--line);
+    padding: 18px 22px;
+}
+
+.app-card-body {
+    padding: 22px;
+}
+
+.stat-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    padding: 20px;
+    height: 100%;
+}
+
+.stat-card span {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.stat-card strong {
+    display: block;
+    font-size: 2rem;
+    line-height: 1.1;
+}
+
+.feature-card {
+    height: 100%;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+}
+
+.module-tile {
+    align-items: center;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    color: var(--ink);
+    display: flex;
+    gap: 12px;
+    min-height: 72px;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.module-tile:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+}
+
+.module-tile i {
+    color: var(--brand);
+    font-size: 1.35rem;
+    width: 28px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 28px;
+}
+
+.timeline::before {
+    background: var(--line);
+    bottom: 0;
+    content: "";
+    left: 9px;
+    position: absolute;
+    top: 0;
+    width: 2px;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-dot {
+    background: var(--brand);
+    border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px var(--line);
+    height: 18px;
+    left: -28px;
+    position: absolute;
+    top: 2px;
+    width: 18px;
+}
+
+.timeline-content {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px 16px;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-weight: 700;
+}
+
+.status-pill.success {
+    background: #e9f8f1;
+    color: var(--success);
+}
+
+.status-pill.danger {
+    background: #fff1f0;
+    color: var(--danger);
+}
+
+.code-badge {
+    font-family: Consolas, Monaco, monospace;
+    border: 1px dashed var(--brand);
+    background: #f0f5ff;
+    color: var(--brand-dark);
+    border-radius: 6px;
+    padding: 7px 10px;
+}
+
+.table thead th {
+    color: var(--muted);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0;
+}
+
+.app-footer {
+    background: #18202b;
+    color: #fff;
+    padding: 28px 0;
+    flex-shrink: 0;
+}
+
+.app-footer p {
+    color: rgba(255, 255, 255, 0.72);
+    margin-bottom: 0;
+}
+
+.app-footer .row {
+    min-height: 72px;
+}
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 18px 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+}
+
+.provider-button {
+    min-height: 46px;
+    font-weight: 600;
+}
+
+@media (max-width: 767px) {
+    .hero {
+        min-height: auto;
+        padding: 36px 0;
+    }
+
+    .display-5 {
+        font-size: 2rem;
+    }
+}

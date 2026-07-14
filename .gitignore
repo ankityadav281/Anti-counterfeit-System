@@ -1,0 +1,23 @@
+# Runtime uploads
+uploads/*
+!uploads/.gitkeep
+
+# Local temporary files
+tmp/
+temp/
+*.log
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Environment/local config backups
+*.bak
+*.local
+.env
+
+# Runtime logs/cache
+storage/logs/*
+!storage/logs/.gitkeep

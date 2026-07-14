@@ -1,6 +1,6 @@
 -- Create database
-CREATE DATABASE IF NOT EXISTS anti_counterfeit;
-USE anti_counterfeit;
+-- CREATE DATABASE IF NOT EXISTS anti_counterfeit;
+-- USE anti_counterfeit;
 
 -- Create manufacturers table
 CREATE TABLE IF NOT EXISTS manufacturers (

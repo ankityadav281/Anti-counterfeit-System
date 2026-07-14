@@ -1,4 +1,4 @@
-USE anti_counterfeit;
+-- USE anti_counterfeit;
 
 ALTER TABLE users MODIFY role ENUM('admin','super_admin','manufacturer','distributor','warehouse_manager','retailer','auditor','user','customer') DEFAULT 'customer';
 

@@ -23,8 +23,8 @@ function app_load_env() {
 
         [$key, $value] = array_map('trim', explode('=', $line, 2));
         $value = trim($value, "\"'");
-        if (getenv($key) === false) {
-            putenv($key . '=' . $value);
+        if (!isset($_ENV[$key]) && getenv($key) === false) {
+            @putenv($key . '=' . $value);
             $_ENV[$key] = $value;
         }
     }
@@ -32,6 +32,9 @@ function app_load_env() {
 
 function app_env($key, $default = null) {
     app_load_env();
+    if (isset($_ENV[$key])) {
+        return $_ENV[$key];
+    }
     $value = getenv($key);
     return $value === false ? $default : $value;
 }

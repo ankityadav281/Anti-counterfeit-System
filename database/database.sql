@@ -1,6 +1,6 @@
 -- Create database
--- CREATE DATABASE IF NOT EXISTS anti_counterfeit;
--- USE anti_counterfeit;
+CREATE DATABASE IF NOT EXISTS anti_counterfeit;
+USE anti_counterfeit;
 
 -- Create manufacturers table
 CREATE TABLE IF NOT EXISTS manufacturers (
@@ -83,13 +83,13 @@ CREATE TABLE IF NOT EXISTS manufacturer_users (
 );
 
 -- Insert sample manufacturer
-INSERT INTO manufacturers (name, email, phone, address) VALUES
+INSERT IGNORE INTO manufacturers (name, email, phone, address) VALUES
 ('Sample Manufacturer', 'manufacturer@example.com', '+1234567890', '123 Manufacturing St, Industrial Park');
 
 -- Insert sample product
-INSERT INTO products (manufacturer_id, name, product_code, batch_number, manufacturing_date, expiry_date, description) VALUES
+INSERT IGNORE INTO products (manufacturer_id, name, product_code, batch_number, manufacturing_date, expiry_date, description) VALUES
 (1, 'Sample Product', 'PROD001', 'BATCH001', '2024-01-01', '2025-01-01', 'This is a sample product for testing');
 
 -- Insert sample admin user (password: admin123)
-INSERT INTO users (username, email, password, role) VALUES
+INSERT IGNORE INTO users (username, email, password, role) VALUES
 ('admin', 'admin@example.com', '$2y$10$8K1p/a0dL1LXMIZoIqPK6.U/BOkNGx1k3hU9V3UF9T3HJGQZsuHhO', 'admin'); 

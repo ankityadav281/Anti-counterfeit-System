@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $database = new Database();
             $db = $database->getConnection();
             enterprise_bootstrap($db);
-            $query = "SELECT id, username, password, role FROM users WHERE username = :username LIMIT 1";
+            $query = "SELECT id, username, password, role FROM users WHERE username = :username OR email = :username LIMIT 1";
             $stmt = $db->prepare($query);
             $stmt->bindParam(":username", $username);
             $stmt->execute();
@@ -93,10 +93,10 @@ include __DIR__ . '/../includes/header.php';
                         <form method="POST" action="login.php">
                             <?php echo csrf_field(); ?>
                             <div class="mb-3">
-                                <label for="username" class="form-label">Username</label>
+                                <label for="username" class="form-label" id="username-label">Username or Email</label>
                                 <div class="input-group">
-                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                    <input type="text" class="form-control" id="username" name="username" required>
+                                    <span class="input-group-text" id="username-icon"><i class="fas fa-user"></i></span>
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter username or email" required>
                                 </div>
                             </div>
                             <div class="mb-3">

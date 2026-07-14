@@ -1,4 +1,4 @@
--- USE anti_counterfeit;
+USE anti_counterfeit;
 
 CREATE TABLE IF NOT EXISTS user_profiles (
     user_id INT PRIMARY KEY,

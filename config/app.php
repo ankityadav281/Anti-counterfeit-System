@@ -22,6 +22,19 @@ function app_load_env() {
         }
 
         [$key, $value] = array_map('trim', explode('=', $line, 2));
+        if (strpos($value, '#') !== false) {
+            // Strip comment unless it is inside a quoted string (basic check)
+            $first_char = $value[0] ?? '';
+            if ($first_char !== '"' && $first_char !== "'") {
+                $value = trim(explode('#', $value, 2)[0]);
+            } else {
+                // If it starts with a quote, find the closing quote and strip comments after it
+                $last_quote = strrpos($value, $first_char);
+                if ($last_quote !== false && $last_quote > 0) {
+                    $value = substr($value, 0, $last_quote + 1);
+                }
+            }
+        }
         $value = trim($value, "\"'");
         if (!isset($_ENV[$key]) && getenv($key) === false) {
             @putenv($key . '=' . $value);
